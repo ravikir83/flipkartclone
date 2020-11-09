@@ -1,9 +1,12 @@
 const express = require('express')
 const env = require('dotenv')
-const { response } = require('express')
+const bodyParser = require('body-parser')
+
 const app = express()
 //environment variable
 env.config()
+// middleware
+app.use(bodyParser.json())
 // get
 app.get('/',(req,res,next)=>{
     res.status(200).json({
@@ -13,7 +16,7 @@ app.get('/',(req,res,next)=>{
 // post
 app.post('/data',(req,res,next)=>{
     res.status(200).json({
-        message: req.body
+        message: req.body        
     })
 })
 // app listen
