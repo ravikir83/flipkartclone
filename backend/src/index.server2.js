@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const userRoutes = require('./routes/user')
 
+
 const app = express()
 //environment variable
 env.config()
@@ -13,7 +14,8 @@ app.use('/api',userRoutes)
 
 mongoose.connect('mongodb://localhost/flipkart', 
                     {useNewUrlParser: true ,
-                     useUnifiedTopology: true}
+                     useUnifiedTopology: true,
+                     useCreateIndex:true}
                 ).then(()=>{
                     console.log('Database connected')
                 })
