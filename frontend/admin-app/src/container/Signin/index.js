@@ -26,7 +26,6 @@ const Signin = (props) => {
                                 value=""
                                 type="password"
                                 onChange={() => {
-
                                 }}
                             />
                             
