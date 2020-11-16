@@ -1,21 +1,23 @@
 import React from 'react'
-import { Navbar,Nav,NavDropdown,Form,FormControl,Button } from 'react-bootstrap'
+import { BrowserRouter,Route,Switch } from 'react-router-dom'
+import './App.css'
+import Layout from './components/Layout'
+import Home from './container/Home'
+import Signin  from './container/Signin'
+import Signup  from './container/Signup'
 
 function App() {
   return (
-    <div className="App">
-      <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="#home">Admin Dashboard</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>            
-          </Nav>          
-        </Navbar.Collapse>
-      </Navbar>
+    <div className="App"> 
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" exact component={Home}/>
+          <Route path="/Signin" exact component={Signin}/>
+          <Route path="/Signup" exact component={Signup}/>
+        </Switch>
+      </BrowserRouter>     
     </div>
-  );
+  );  
 }
 
 export default App;
