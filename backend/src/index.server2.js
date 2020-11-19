@@ -9,7 +9,7 @@ const app = express()
 //environment variable
 env.config()
 // middleware
-app.use(bodyParser.json())
+app.use(express.json())
 app.use('/api',userRoutes)
 
 mongoose.connect('mongodb://localhost/flipkart', 

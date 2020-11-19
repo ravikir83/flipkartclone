@@ -13,9 +13,10 @@ const userSchema = new mongoose.Schema({
 
 },{timestamps:true})
 
+
 userSchema.virtual('password')
-          .set(function(password){
-                this.hash_password = bcrypt.hashSync(password,10)                
+        .set(function(password){
+            this.hash_password = bcrypt.hashSync(password,10)                
 })
 
 userSchema.virtual('fullName')
