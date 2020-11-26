@@ -1,4 +1,4 @@
-const express = require('express')
+    const express = require('express')
 const { requireSignin } = require('../common-middleware')
 const router = express.Router()
 const { signup , signin } = require('../controller/auth')

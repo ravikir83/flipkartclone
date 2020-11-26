@@ -3,6 +3,7 @@ const env = require('dotenv')
 const mongoose = require('mongoose')
 const userRoutes = require('./routes/auth')
 const categoryRoutes = require('./routes/category')
+const product = require('./routes/product')
 
 const app = express()
 //environment variable
@@ -11,6 +12,7 @@ env.config()
 app.use(express.json())
 app.use('/api',userRoutes)
 app.use('/api',categoryRoutes)
+app.use('/api',product)
 
 mongoose.connect('mongodb://localhost/flipkart', 
                     {useNewUrlParser: true ,

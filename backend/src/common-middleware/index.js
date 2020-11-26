@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken')
 
 exports.requireSignin = (req,res,next)=>{
+    console.log('requireSignin')
     if(req.headers.authorization){
         const token = req.headers.authorization.split(" ")[1]
         console.log(token)
@@ -25,13 +26,12 @@ exports.userMiddleware = (req,res,next)=>{
 
 exports.adminMiddleware = (req,res,next)=>{
     if(req.user.role !== 'admin'){
-        console.log(req.user.role)
-        console.log(req.user.role)
+        console.log(req.user.role)        
         return res.status(400).json({
             message:'Access denied'
         })
     }else{
-        console.log(req.user.role)
+        console.log('adminMiddleware',req.user.role)        
     }
     next()
 }
