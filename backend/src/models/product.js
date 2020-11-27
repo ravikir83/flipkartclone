@@ -1,6 +1,4 @@
 const mongoose = require('mongoose')
-// const User = require('./user')
-// const Category = require('./category')
 
 const productSchema = new mongoose.Schema({
     name:{
@@ -16,6 +14,11 @@ const productSchema = new mongoose.Schema({
     },
 
     price:{
+        type:Number,
+        required:true
+    },
+
+    quantity:{
         type:Number,
         required:true
     },
