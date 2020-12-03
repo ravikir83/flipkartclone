@@ -21,7 +21,7 @@ exports.requireSignin = (req,res,next)=>{
 }
 
 exports.userMiddleware = (req,res,next)=>{
-
+    next()
 }
 
 exports.adminMiddleware = (req,res,next)=>{
